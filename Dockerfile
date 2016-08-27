@@ -34,6 +34,7 @@ zlib1g-dev
 
 RUN pip install --upgrade pip && \
  pip install variant_tools \
+ numpy \
  scikit-bio \
  scipy \
  statsmodels \
