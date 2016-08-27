@@ -7,7 +7,7 @@ MAINTAINER Olivier Harismendy "oharismendy@ucsd.edu"
 WORKDIR /opt
 
 ### install
-RUN  apt-get update && apt-get install -y  \
+RUN apt-get update && apt-get install -y \
 autoconf \
 build-essential \
 curl \
@@ -33,32 +33,33 @@ zlib1g \
 zlib1g-dev
 
 RUN pip install --upgrade pip && \
-    pip install variant_tools
-    pip install scikit bio
-    pip install scipy
-    pip install statsmodels
-    pip install pandas
-    pip install matplotlib
+ pip intall variant_tools \
+ scikit bio \
+ scipy \
+ statsmodels \
+ pandas \
+ matplotlib
 
 RUN git clone https://github.com/marcelm/cutadapt.git && \
-    	cd /cutadapt/ && python setup.py install && python setup.py build_ext -i
-    	make &&\
-      cp cutadapt /usr/bin
+ 	cd /cutadapt/ && python setup.py install && python setup.py build_ext -i $$\
+ 	make &&\
+ cp cutadapt /usr/bin
 
 WORKDIR /opt
 
-RUN   git clone https://github.com/BenLangmead/bowtie2.git
-      cd bowtie2
-      make &&\
-      cp bowtie2 /usr/bin &&\
-      cp  bowtie2-align-s /usr/bin &&\
-      cp  bowtie2-align-l /usr/bin &&\
-      cp  bowtie2-build /usr/bin &&\
-      cp  bowtie2-build-s /usr/bin &&\
-      cp  bowtie2-build-l /usr/bin &&\
-      cp  bowtie2-inspect /usr/bin &&\
-      cp  bowtie2-inspect-s /usr/bin &&\
-      cp  bowtie2-inspect-l /usr/bin &&\
+RUN git clone https://github.com/BenLangmead/bowtie2.git &&\
+ cd bowtie2 $$\
+ make &&\
+ cp bowtie2 /usr/bin &&\
+ cp bowtie2-align-s /usr/bin &&\
+ cp bowtie2-align-l /usr/bin &&\
+ cp bowtie2-build /usr/bin &&\
+ cp bowtie2-build-s /usr/bin &&\
+ cp bowtie2-build-l /usr/bin &&\
+ cp bowtie2-inspect /usr/bin &&\
+ cp bowtie2-inspect-s /usr/bin &&\
+ cp bowtie2-inspect-l /usr/bin &&\
+
 
 WORKDIR /opt
 
