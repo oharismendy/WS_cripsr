@@ -33,7 +33,7 @@ zlib1g \
 zlib1g-dev
 
 RUN wget https://repo.continuum.io/archive/Anaconda2-4.1.1-MacOSX-x86_64.sh &&\
-    bash Anaconda2-4.1.1-MacOSX-x86_64.sh -b -p /usr/bin/anaconda &&\
+    bash Anaconda2-4.1.1-MacOSX-x86_64.sh -b -p /usr/bin/anaconda 
 
 RUN conda install variant_tools \
  numpy \
