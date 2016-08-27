@@ -23,6 +23,7 @@ pkg-config \
 python \
 python-pip \
 python-dev \
+python-numpy \
 software-properties-common \
 screen \
 vim \
@@ -32,16 +33,15 @@ zlibc \
 zlib1g \
 zlib1g-dev
 
-RUN wget https://repo.continuum.io/archive/Anaconda2-4.1.1-Linux-x86_64.sh &&\
-    bash Anaconda2-4.1.1-Linux-x86_64.sh -b -p /usr/bin/anaconda 
 
-RUN conda install variant_tools \
- numpy \
- scikit-bio \
- scipy \
- statsmodels \
- pandas \
- matplotlib
+RUN pip install --upgrade pip &&\
+    pip install variant_tools \
+    numpy \
+    scikit-bio \
+    scipy \
+    statsmodels \
+    pandas \
+    matplotlib
 
 RUN git clone https://github.com/marcelm/cutadapt.git && \
  	cd /cutadapt/ && python setup.py install && python setup.py build_ext -i $$\
