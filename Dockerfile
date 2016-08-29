@@ -35,8 +35,7 @@ zlib1g-dev
 
 
 RUN pip install --upgrade pip &&\
-    pip install variant_tools \
-    scipy \
+    pip install scipy \
     statsmodels \
     pandas \
     matplotlib \
