@@ -59,6 +59,7 @@ WORKDIR /opt
 RUN groupadd -r -g 1000 ubuntu &&\
     useradd -r -g ubuntu -u 1000 -d /home/ubuntu ubuntu &&\
     echo "ubuntu ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers &&\
+    mkdir -p /home/ubuntu &&\
     chown -R ubuntu:ubuntu /home/ubuntu
 
 USER ubuntu
