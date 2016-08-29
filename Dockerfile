@@ -42,9 +42,11 @@ RUN pip install --upgrade pip &&\
     matplotlib
 
 RUN git clone https://github.com/marcelm/cutadapt.git && \
- 	cd /cutadapt/ && python setup.py install && python setup.py build_ext -i $$\
+ 	cd cutadapt/ &&\
+  python setup.py install &&\
+  python setup.py build_ext -i &&\
  	make &&\
- cp cutadapt /usr/bin
+  cp cutadapt /usr/bin
 
 WORKDIR /opt
 
