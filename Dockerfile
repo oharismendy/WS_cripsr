@@ -39,7 +39,8 @@ RUN pip install --upgrade pip &&\
     scipy \
     statsmodels \
     pandas \
-    matplotlib
+    matplotlib \
+    Cython
 
 RUN git clone https://github.com/marcelm/cutadapt.git && \
  	cd cutadapt/ &&\
