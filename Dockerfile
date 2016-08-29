@@ -58,9 +58,11 @@ RUN git clone https://github.com/BenLangmead/bowtie2.git &&\
 WORKDIR /opt
 
 RUN groupadd -r -g 1000 ubuntu && useradd -r -g ubuntu -u 1000 ubuntu
-USER ubuntu
+RUN echo "ubuntu ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 ENV HOME /home/ubuntu
+RUN chown -R ubuntu:ubuntu $HOME
 
+USER ubuntu
 WORKDIR /home/ubuntu
 
 CMD ["/bin/bash"]
