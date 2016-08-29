@@ -53,14 +53,14 @@ RUN git clone https://github.com/BenLangmead/bowtie2.git &&\
  cp bowtie2-build-l /usr/bin &&\
  cp bowtie2-inspect /usr/bin &&\
  cp bowtie2-inspect-s /usr/bin &&\
- cp bowtie2-inspect-l /usr/bin 
-
+ cp bowtie2-inspect-l /usr/bin
 
 WORKDIR /opt
 
-RUN chmod a+x /usr/local/bin/*
-
 RUN groupadd -r -g 1000 ubuntu && useradd -r -g ubuntu -u 1000 ubuntu
+USER ubuntu
+ENV HOME /home/ubuntu
 
+WORKDIR /home/ubuntu
 
 CMD ["/bin/bash"]
