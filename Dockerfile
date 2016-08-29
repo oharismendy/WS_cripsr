@@ -42,10 +42,8 @@ RUN pip install --upgrade pip &&\
     matplotlib \
     cutadapt
 
-WORKDIR /opt
-
 RUN git clone https://github.com/BenLangmead/bowtie2.git &&\
- cd bowtie2 $$\
+ cd bowtie2 &&\
  make &&\
  cp bowtie2 /usr/bin &&\
  cp bowtie2-align-s /usr/bin &&\
@@ -55,7 +53,7 @@ RUN git clone https://github.com/BenLangmead/bowtie2.git &&\
  cp bowtie2-build-l /usr/bin &&\
  cp bowtie2-inspect /usr/bin &&\
  cp bowtie2-inspect-s /usr/bin &&\
- cp bowtie2-inspect-l /usr/bin &&\
+ cp bowtie2-inspect-l /usr/bin 
 
 
 WORKDIR /opt
