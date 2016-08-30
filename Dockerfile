@@ -21,6 +21,7 @@ make \
 man \
 pkg-config \
 python \
+python-tk \
 python-pip \
 python-dev \
 python-numpy \
@@ -39,7 +40,6 @@ RUN pip install --upgrade pip &&\
     statsmodels \
     pandas \
     matplotlib \
-    python-tk \
     cutadapt
 
 RUN git clone https://github.com/BenLangmead/bowtie2.git &&\
