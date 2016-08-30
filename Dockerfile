@@ -39,6 +39,7 @@ RUN pip install --upgrade pip &&\
     statsmodels \
     pandas \
     matplotlib \
+    python-tk \
     cutadapt
 
 RUN git clone https://github.com/BenLangmead/bowtie2.git &&\
