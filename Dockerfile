@@ -32,7 +32,9 @@ wget \
 zip \
 zlibc \
 zlib1g \
-zlib1g-dev
+zlib1g-dev \
+gedit \
+gpicview
 
 
 RUN pip install --upgrade pip &&\
