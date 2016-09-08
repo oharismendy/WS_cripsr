@@ -25,6 +25,7 @@ python-tk \
 python-pip \
 python-dev \
 python-numpy \
+python-yaml \
 software-properties-common \
 screen \
 vim \
