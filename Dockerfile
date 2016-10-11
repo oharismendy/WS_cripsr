@@ -75,4 +75,4 @@ RUN groupadd -r -g 1000 ubuntu &&\
 USER ubuntu
 WORKDIR /home/ubuntu
 
-CMD ["/bin/bash"]
+#CMD ["/bin/bash"]
