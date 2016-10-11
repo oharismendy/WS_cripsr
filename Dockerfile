@@ -70,7 +70,7 @@ RUN groupadd -r -g 1000 ubuntu &&\
     mkdir -p /home/ubuntu &&\
     chown -R ubuntu:ubuntu /home/ubuntu &&\
     mv /opt/workshop_material.zip /home/ubuntu &&\
-    chmod 775 /home/ubuntu/workshop_material.zip
+    chown ubuntu:ubuntu /home/ubuntu/workshop_material.zip
     
 USER ubuntu
 WORKDIR /home/ubuntu
