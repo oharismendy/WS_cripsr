@@ -68,9 +68,10 @@ RUN groupadd -r -g 1000 ubuntu &&\
     useradd -r -g ubuntu -u 1000 -d /home/ubuntu ubuntu &&\
     echo "ubuntu ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers &&\
     mkdir -p /home/ubuntu &&\
+    chown -R ubuntu:ubuntu /home/ubuntu &&\
     mv /opt/workshop_material.zip /home/ubuntu &&\
-    chown -R ubuntu:ubuntu /home/ubuntu
-
+    chmod 775 /home/ubuntu/workshop_material.zip
+    
 USER ubuntu
 WORKDIR /home/ubuntu
 
