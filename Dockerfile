@@ -62,15 +62,15 @@ RUN git clone https://github.com/BenLangmead/bowtie2.git &&\
 
 WORKDIR /opt
 
-ADD https://www.dropbox.com/s/aaz01rf09otjjq3/workshop_material.zip /opt
+#ADD https://www.dropbox.com/s/aaz01rf09otjjq3/workshop_material.zip /opt
 
 RUN groupadd -r -g 1000 ubuntu &&\
     useradd -r -g ubuntu -u 1000 -d /home/ubuntu ubuntu &&\
     echo "ubuntu ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers &&\
     mkdir -p /home/ubuntu &&\
-    chown -R ubuntu:ubuntu /home/ubuntu &&\
-    mv /opt/workshop_material.zip /home/ubuntu &&\
-    chown ubuntu:ubuntu /home/ubuntu/workshop_material.zip
+    chown -R ubuntu:ubuntu /home/ubuntu
+    #mv /opt/workshop_material.zip /home/ubuntu &&\
+    #chown ubuntu:ubuntu /home/ubuntu/workshop_material.zip
     
 USER ubuntu
 WORKDIR /home/ubuntu
