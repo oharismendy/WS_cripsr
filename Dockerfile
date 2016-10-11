@@ -69,7 +69,6 @@ RUN groupadd -r -g 1000 ubuntu &&\
     chown -R ubuntu:ubuntu /home/ubuntu
 
 ADD https://www.dropbox.com/s/aaz01rf09otjjq3/workshop_material.zip /home/ubuntu
-RUN unzip /home/ubuntu/workshop_material.zip
 
 USER ubuntu
 WORKDIR /home/ubuntu
