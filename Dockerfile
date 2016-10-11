@@ -35,8 +35,10 @@ zlibc \
 zlib1g \
 zlib1g-dev \
 gedit \
-gpicview
+gpicview \
+r-base
 
+RUN R -e "install.packages('heatmap.2', repos = 'http://cran.rstudio.com/')"
 
 RUN pip install --upgrade pip &&\
     pip install scipy \
@@ -65,6 +67,9 @@ RUN groupadd -r -g 1000 ubuntu &&\
     echo "ubuntu ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers &&\
     mkdir -p /home/ubuntu &&\
     chown -R ubuntu:ubuntu /home/ubuntu
+
+ADD https://www.dropbox.com/s/aaz01rf09otjjq3/workshop_material.zip /home/ubuntu
+RUN unzip /home/ubuntu/workshop_material.zip
 
 USER ubuntu
 WORKDIR /home/ubuntu
