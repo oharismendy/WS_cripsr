@@ -38,7 +38,7 @@ gedit \
 gpicview \
 r-base
 
-RUN R -e "install.packages('heatmap.2', repos = 'http://cran.rstudio.com/')"
+RUN R -e "install.packages(c('heatmap.2','gplots'), repos = 'http://cran.rstudio.com/')" 
 
 RUN pip install --upgrade pip &&\
     pip install scipy \
