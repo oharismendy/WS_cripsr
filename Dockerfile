@@ -47,8 +47,7 @@ RUN pip install --upgrade pip &&\
     matplotlib \
     cutadapt \
     joblib \
-    multiprocessing \
-    decimal
+    multiprocessing 
 
 RUN git clone https://github.com/BenLangmead/bowtie2.git &&\
  cd bowtie2 &&\
